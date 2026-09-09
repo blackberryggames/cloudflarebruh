@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YT Proxy</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <a class="logo" onclick="goHome()">▶ YT Proxy</a>
+  <div class="search-bar">
+    <input id="q" type="text" placeholder="Search videos…" autocomplete="off"
+      onkeydown="if(event.key==='Enter') doSearch()" />
+    <button onclick="doSearch()">Search</button>
+  </div>
+  <span id="instance-badge" title="Current Invidious instance"></span>
+</header>
+
+<main>
+  <section id="player-section">
+    <div class="player-grid">
+      <div>
+        <div class="video-wrap">
+          <video id="video-player" controls playsinline preload="metadata"></video>
+        </div>
+        <div class="video-meta">
+          <div class="video-title" id="vtitle"></div>
+          <div class="video-sub">
+            <span id="vauthor"></span>
+            <span id="vviews"></span>
+            <span id="vlen"></span>
+          </div>
+          <div class="quality-row" id="quality-row"></div>
+          <div class="desc-box" id="vdesc"></div>
+        </div>
+      </div>
+      <div>
+        <div class="section-title">Related</div>
+        <div id="related-grid" class="results-grid"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="results-section">
+    <div id="results-status" class="status">
+      <div style="font-size:2.5rem; margin-bottom:12px">▶</div>
+      Search for any video to get started.
+    </div>
+    <div id="results-grid" class="results-grid" style="display:none"></div>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
